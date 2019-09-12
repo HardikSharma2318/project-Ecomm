@@ -1,4 +1,6 @@
 import React from 'react';
+import {ProductConsumer} from "../Context";
+import {storeProducts,detailProduct} from "../Data";
 import { genericTypeAnnotation } from '@babel/types';
 import {Link} from 'react-router-dom';
 import './SideDrawer.css';
@@ -25,9 +27,13 @@ const SideDrawer = props =>{
                 /></h2></Link>     
 
             <ul className="list-group">
-                <li className="list-group-item">Home</li>  
-                <li className="list-group-item">Fashion</li>
-                <li className="list-group-item">Electronics</li>
+                <li className="list-group-item" >Home</li>  
+                <li className="list-group-item"  o onClick = {() => {
+                    value.getData("fashion")
+                }}>Fashion</li>
+                <li className="list-group-item"   onClick = {() => {
+                    value.getData("testing")
+                }}>Electronics</li>
                 <li className="list-group-item">Stationary</li>
                 <li className="list-group-item">Clothes</li>
             </ul>
