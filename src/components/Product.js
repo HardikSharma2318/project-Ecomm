@@ -6,16 +6,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {ProductConsumer} from './Context';
 import PropTypes from 'prop-types'; //To prevent data from being modified
 
+
+
+
 export default class Product extends Component {
     render() {
-        const {id,title,img,price,inCart} = this.props.product;
+        const {id,title,img,price,inCart} = this.props.product;// added later when we want all these deconstructed values like variable in jason data
+        
+
         return (
             <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
                 <div className="card"> {/* bootstrap class */}
-                    <ProductConsumer>
+                   
+                    <ProductConsumer> 
                      {(value) => (
                          <div className="img-container p-5" onClick={
-                             () =>{value.handleDetail(id);}
+                             () =>{value.handleDetail(id)}
                          }>
                          <Link to="/details">
                              <img src={img} alt="product" className="card-img-top"></img>
