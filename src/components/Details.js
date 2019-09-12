@@ -8,7 +8,7 @@ export default class Details extends Component {
             
         <ProductConsumer>
             { value => {
-                     const {id,company,img,info,price,title,inCart} = 
+                     const {id,company,img,info,price,title} = 
                      value.detailProduct;
                 return (
                     <div className = "container py-5">
@@ -23,14 +23,14 @@ export default class Details extends Component {
                        {/*product information*/}
                         <div className ="row">
                             <div className = "col-10 ms-auto col-md-6 my-3">
-                                <img src={img} class="img-fluid" alt="product"
+                                <img src={img} className ="img-fluid" alt="product"
                                 />
                             </div>
                             {/*product text*/}
                             <div className = "col-10 ms-auto col-md-6 my-3 text-capitalize">
                                 <h2> model: {title} </h2>
                                 <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
-                                 made by: <span classname="text-uppercase">
+                                 made by: <span className="text-uppercase">
                                  {company}</span>
                                 </h4>
                                 <h4 className="text-blue">
@@ -50,11 +50,11 @@ export default class Details extends Component {
                                         back to products
                                       </button>  
                                    </Link>
-                                   <Link to="/Cart">
-                                    <button>
+                                   
+                                    <button onClick={() =>{console.log("your product id is: ", {id})}}>
                                        Add to cart
                                       </button>  
-                                   </Link>     
+                                       
                                    
 
                                 </div>    
